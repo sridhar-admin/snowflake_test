@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: STAGE_BSF_EVENT_ATTENDANCE
+    database: BSF01_DEV
+    schema: BSF01_SALESFORCE
+    tables:
+      - name: STAGE_BSF_EVENT_ATTENDANCE
