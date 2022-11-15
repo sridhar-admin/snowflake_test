@@ -7,6 +7,8 @@ union all
 select 2 as id, 'part2' as partname ,current_timestamp as loaddate
 union all
 select 3 as id, 'part3' as partname ,current_timestamp as loaddate
+union all
+select 4 as id, 'part4' as partname ,current_timestamp as loaddate
 )
 
 select * from parts_data
