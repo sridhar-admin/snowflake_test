@@ -9,6 +9,5 @@ union all
 select 3 as id, 'part3' as partname ,current_timestamp as loaddate
 )
 
-
 select * from parts_data
 
