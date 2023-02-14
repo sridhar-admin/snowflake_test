@@ -1,5 +1,5 @@
 
-{% snapshot mock_orders %}
+{% snapshot mock_orders_snapshot %}
 
 {% set new_schema = target.schema + '_snapshot' %}
 

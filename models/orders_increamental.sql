@@ -4,7 +4,7 @@
 }}
 
 with orders as (
-	select * from  {{ ref('stg_orders') }}
+	select * from  BSF01_DEV.DEV_ORDER.mock_orders_merge
 	
 	{% if is_incremental() %}
 	where ORDER_DATE >= (select max(ORDER_DATE) from {{ this }})
