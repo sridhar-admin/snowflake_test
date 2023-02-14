@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: DEV_ORDER
+    database: BSF01_DEV
+    schema: DEV_ORDER
+    tables:
+      - name: EMP_1
+      - name: EMP_2
+
+models:
+  - name: emp_2_dbt
+    columns:
+      - name: emp_id
+        tests:
+          - unique
+          - not_null
+  - name: emp_1_dbt
+    columns:
+      - name: emp_id
+        tests:
+          - unique
+          - not_null
+

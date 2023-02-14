@@ -37,5 +37,7 @@ models:
     marts:
       core:
         +materialized: table
-    staging:
-      +materialized: view
+
+vars:
+  xyz: all
+  

@@ -1,0 +1,59 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+      - name: orders
+
+models:
+  - name: stg_customer
+    description: customers details
+    columns:
+      - name: customer_id
+        description: identfy the customers 
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: indicates the sir name
+      - name: last_name
+        description: indicates the actual name       
+
+
+  - name: stg_orders
+    description: order details
+    columns:
+      - name: order_id
+        data_type: int
+        description: indicates the order number
+        tests:
+          - unique
+          - not_null
+      - name: order_date
+        data_type: date
+        description: position of the order
+      - name: customer_id
+        data_type: int
+        description: customer to the order     
+      - name: status
+        data_type: varchar(50)
+        description: indicates the status of the order
+        tests:
+          - accepted_values:
+              values: ['placed','shipped', 'completed', 'return_pending', 'returned']
+
+models:
+  - name: stg_customer_py
+    description: customers details
+    config:
+      materialized: table
+      tags: ['python']
+    columns:
+      - name: customer_id
+        description: identfy the customers 
+        tests:
+          - unique
+          - not_null              
