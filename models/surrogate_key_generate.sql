@@ -1,3 +1,6 @@
+{{ 
+    config(materialized='table')
+}}
 
 with orders as (
   select * from {{ ref('stg_orders')}}
@@ -12,8 +15,7 @@ fct_orders as (
             payment_id,
             amount
         from orders o
-        left join payments p ON o.order_id=p.payment_id
+        left join payments p ON o.order_id=p.orderid
     )
 
     select * from fct_orders
-
